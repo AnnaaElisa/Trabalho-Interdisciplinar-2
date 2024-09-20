@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Controle de Estoque</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"], input[type="number"], input[type="datetime-local"], input[type="date"] {
+            width: 150px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+        }
+        .button-green { background-color: green; color: white; }
+        .button-blue { background-color: blue; color: white; }
+        .button-red { background-color: red; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Controle de Estoque</h1>
+    <form action="/produto/insert" method="post">
+        <h2>Inserir Produto</h2>
+        <label>Descrição: </label>
+        <input type="text" name="descricao"><br><br>
+        
+        <label>Preço: </label>
+        <input type="text" name="preco"><br><br>
+        
+        <label>Quantidade: </label>
+        <input type="number" name="quantidade"><br><br>
+        
+		<label>Data de fabricação: </label>
+		<input type="datetime-local" name="data_fabricacao"><br><br>
+        
+		<label>Data de validade: </label>
+		<input type="date" name="data_validade"><br><br>
+        
+        <input type="submit" class="button-green" value="Cadastrar">
+    </form>
+
+    <hr>
+    <h2>Detalhar produto</h2>
+    <form action="/produto/consultar" method="get">
+        <label>ID do produto: </label>
+        <input type="text" name="id"><br><br>
+        <input type="submit" class="button-blue" value="Consultar">
+    </form>
+
+    <hr>
+    <h2>Remover produto</h2>
+    <form action="/produto/remover" method="post">
+        <label>ID do produto: </label>
+        <input type="text" name="id"><br><br>
+        <input type="submit" class="button-red" value="Remover">
+    </form>
+
+    <hr>
+    <h2>Listar produtos</h2>
+    <form action="/produto/listar" method="get">
+        <input type="submit" class="button-blue" value="Todos">
+    </form>
+	
+	
+</body>
+</html>
